@@ -34,4 +34,5 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'shoulda-matchers'
 end
