@@ -6,12 +6,11 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :handle
   validates :handle, length: { minimum: 4, maximum: 12 }
   validates :handle, format: { with: /\w+/ }
+  validates :bio, length: { maximum: 141 }
 
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
 private
-
-
 end

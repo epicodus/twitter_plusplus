@@ -7,6 +7,6 @@ describe User do
   it { should ensure_length_of(:handle).is_at_most(12) }
   it { should allow_value('justin', 'speers', 'justin_sp', 'justin82', '82_justinsp').for(:handle) }
   it { should_not allow_value('justin@sp', '82-justinsp', '@#$@#%', 'j u s tin', '@justin').for(:handle) }
+  it { should ensure_length_of(:bio).is_at_most(141) }
 
-  
 end
