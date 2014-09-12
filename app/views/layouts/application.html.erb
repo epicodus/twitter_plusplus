@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TwitterPlusplus</title>
+  <title>Twitter++</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,8 +13,9 @@
   <p class="alert"><%= alert %></p>
 </div>
 
-
-<%= yield %>
+<div class="container-fluid">
+  <%= yield %>
+</div>
 
 </body>
 </html>
