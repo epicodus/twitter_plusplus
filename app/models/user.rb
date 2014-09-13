@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates :handle, format: { with: /\w+/ }
   validates :bio, length: { maximum: 141 }
 
+
   has_attached_file :avatar, :style => { :medium => "300x300", :thumb => "100x100" },
                     :default_url => 'unknown.png'
 
