@@ -1,6 +1,6 @@
-<h1>Twitter++ Dummy Home Page</h1>
-
-
 <% if user_signed_in? %>
-  <%= image_tag current_user.avatar.url %>
+  <h1><%= current_user.handle %> </h1>
+  <%= image_tag current_user.avatar.url(:thumb) %>
+<% else %>
+  <%= render('layouts/jumbotron') %>
 <% end %>
