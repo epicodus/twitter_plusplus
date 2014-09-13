@@ -47,14 +47,37 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
   config.include Devise::TestHelpers, type: :controller
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
+
+
+##### database_cleaner setup ########
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
   end
 
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
+##### end database_cleaner setup #####
+
+
+
+
+#### factory girl setup ########
   config.include FactoryGirl::Syntax::Methods
 
   config.before(:suite) do
     FactoryGirl.lint
   end
+
+####### END FACTORY GIRL SETUP #########
+
+
+
 end
