@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    email "justin@test.com"
-    handle "justin"
-    bio "This is a dummy account for test purposes"
-    password "password"
+    sequence(:email)    { |num| "user#{num}@twitterpp.com"  }
+    sequence(:handle)   { |num| "handle#{num}"              }
+    sequence(:password) { |num| "password#{num}"                }
   end
 end
