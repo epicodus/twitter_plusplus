@@ -50,16 +50,19 @@ RSpec.configure do |config|
 
   config.include Devise::TestHelpers, type: :controller
 
-
-#### factory girl setup ########
   config.include FactoryGirl::Syntax::Methods
 
   config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
     FactoryGirl.lint
   end
 
-####### END FACTORY GIRL SETUP #########
-
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 
 
 end
