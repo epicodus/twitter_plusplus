@@ -27,6 +27,20 @@ describe User do
       @user_follower.follow!(@user_followed)
       expect(@user_follower.following?(@user_followed)).to be_truthy
     end
+
+    describe "unfollowing" do
+      it "should remove a follower" do
+        @user = FactoryGirl.create(:user)
+        @boring_user = FactoryGirl.create(:user)
+
+        @user.follow!(@boring_user)
+        expect(@user.following?(@boring_user)).to be_truthy
+        @user.unfollow!(@boring_user)
+        expect(@user.following?(@boring_user)).to be_nil
+      end
+
+    end
   end
+
 
 end
