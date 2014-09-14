@@ -16,8 +16,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   has_many :relations, foreign_key: 'follower_id', dependent: :destroy
-
   has_many :followed_users, through: :relations, source: :followed
+
+  has_many  :reverse_relations, foreign_key: 'followed_id',
+            class_name: 'Relation', dependent: :destroy
+  has_many :followers, through: :reverse_relations
 
   def follow!(another_user)
     relations.create!(followed_id: another_user.id)
