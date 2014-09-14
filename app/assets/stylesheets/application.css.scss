@@ -26,6 +26,7 @@ body {
 .dashboard-left {
   background-color: #f0f0f0;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .dashboard-left img {
@@ -34,5 +35,25 @@ body {
 
 .dashboard-tweet-box {
   background-color: #e8e8e8;
+  padding: 20px 10px 20px 10px;
+}
+
+
+.dashboard-center {
+  background-color: #f0f0f0;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-right {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-who-to-follow-box {
+  background-color: #f0f0f0;
   padding: 20px 10px 20px 10px;
 }
