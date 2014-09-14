@@ -17,3 +17,22 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+  background-color: #1d1f21;
+}
+
+.dashboard-left {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.dashboard-left img {
+  display: inline;
+}
+
+.dashboard-tweet-box {
+  background-color: #e8e8e8;
+  padding: 20px 10px 20px 10px;
+}

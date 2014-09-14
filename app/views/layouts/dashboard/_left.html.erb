@@ -1,0 +1,25 @@
+<% redirect_to new_user_registration_path unless user_signed_in? %>
+<div class="col-md-3 dashboard-left">
+  <p class="lead"><%= image_tag current_user.avatar %>@<%= current_user.handle %></p>
+
+  <table class="table">
+    <thead>
+      <th>Tweets</th>
+      <th>Following</th>
+      <th>Followers</th>
+    </thead>
+    <tr>
+      <td><%= current_user.tweets.length %></td>
+      <td><%= current_user.followed_users.length %></td>
+      <td><%= current_user.followers.length %></td>
+    </tr>
+  </table>
+
+  <div class="dashboard-tweet-box">
+    <%= form_for @tweet, remote: true do |f| %>
+      <%= f.text_area :content, cols: 40, rows: 4 %>
+      <%= f.submit "Tweet++", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</div>
