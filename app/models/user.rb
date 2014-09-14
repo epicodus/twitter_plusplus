@@ -19,5 +19,13 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :relations, source: :followed
 
+  def follow!(another_user)
+    relations.create!(followed_id: another_user.id)
+  end
+
+  def following?(another_user)
+    relations.find_by(followed_id: another_user.id)
+  end
+
 private
 end

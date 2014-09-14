@@ -11,5 +11,22 @@ describe User do
 
   it { should respond_to :relations }
   it { should respond_to :followed_users }
+  it { should respond_to :follow! }
+  it { should respond_to :following? }
+
+
+  describe "following?" do
+    it "should return false when asked if a user follows someone they don't" do
+      expect(FactoryGirl.create(:user).following?(FactoryGirl.create(:user))).to be_nil
+    end
+
+    it "should return true when a user is following the other user in question" do
+      @user_followed = FactoryGirl.create(:user)
+      @user_follower = FactoryGirl.create(:user)
+
+      @user_follower.follow!(@user_followed)
+      expect(@user_follower.following?(@user_followed)).to be_truthy
+    end
+  end
 
 end
