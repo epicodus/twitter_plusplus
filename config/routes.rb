@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
 
-  # get 'profile', to: 'users#show'
-  # get 'login', to: user_session_path
-  # get 'logout', to: destroy_user_session_path
+  #todo remap user_root_path to redirect devise after login
+  
 end
