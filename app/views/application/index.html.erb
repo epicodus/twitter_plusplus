@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <h1><%= current_user.handle %> </h1>
+  <h1>@<%= current_user.handle %> </h1>
   <%= image_tag current_user.avatar.url(:thumb) %>
 <% else %>
   <%= render('layouts/jumbotron') %>
