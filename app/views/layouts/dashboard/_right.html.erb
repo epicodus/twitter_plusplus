@@ -13,7 +13,7 @@
             <% if current_user.followed_users.include?(user) %>
               <li>@<%= user.handle %></li>
             <% else %>
-              <li class="text-muted">@<%= user.handle %></li>
+              <li class="text-muted"><%= image_tag user.avatar(:thumb), class: 'avatar-image' %>@<%= user.handle %></li>
             <% end %>
           <% end %>
         <% end %>

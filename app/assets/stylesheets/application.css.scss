@@ -29,9 +29,7 @@ body {
   overflow: hidden;
 }
 
-.dashboard-left img {
-  display: inline;
-}
+
 
 .dashboard-box {
   background-color: #e8e8e8;
@@ -66,7 +64,18 @@ dashboard-box {
 }
 
 .error-box {
-  background-color: #0000;
+  margin: auto;
+  background-color: #ff0000;
   padding: 20px 10px 20px 10px;
-  color: #ff0000;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#tweet-box {
+  padding-bottom: 10px;
+}
+
+.avatar-image {
+  display: inline;
 }
