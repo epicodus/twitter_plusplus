@@ -2,16 +2,9 @@
 <div class="col-md-3 dashboard-left">
   <p class="lead"><%= image_tag current_user.avatar %>@<%= current_user.handle %></p>
 
-  <div id="current-user-stats">
-    <%= render('layouts/dashboard/userstats', object: current_user) %>
-  </div>
 
-  <div class="dashboard-box">
-    <%= form_for @tweet, remote: true do |f| %>
-      <%= f.text_area :content, cols: 30, rows: 5 %>
-      <%= f.submit "Tweet++", class: "btn btn-primary" %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-    <% end %>
-  </div>
+  <%= render('layouts/dashboard/userstats', object: current_user) %>
 
+  <%= render('layouts/dashboard/tweetbox') %>
+  
 </div>
