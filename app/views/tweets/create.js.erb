@@ -1,0 +1,3 @@
+alert("HELLO! from create.js.erb in tweets view folder");
+$('#tweet_content').value("");
+$('#current-user-stats').html("<%= j render('layouts/dashboard/userstats', object: current_user) %>");

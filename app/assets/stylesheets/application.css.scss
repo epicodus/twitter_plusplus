@@ -33,7 +33,7 @@ body {
   display: inline;
 }
 
-.dashboard-tweet-box {
+.dashboard-box {
   background-color: #e8e8e8;
   padding: 20px 10px 20px 10px;
 }
@@ -53,13 +53,20 @@ body {
   overflow: hidden;
 }
 
-.dashboard-who-to-follow-box {
+dashboard-box {
   background-color: #f0f0f0;
   padding: 20px 10px 20px 10px;
+  border-radius: 10px;
 }
 
 
 .dashboard-all-users li {
   list-style-type: none;
   padding-bottom: 6px;
+}
+
+.error-box {
+  background-color: #0000;
+  padding: 20px 10px 20px 10px;
+  color: #ff0000;
 }
