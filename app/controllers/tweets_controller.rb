@@ -7,10 +7,6 @@ class TweetsController < ApplicationController
       redirect_to new_user_session_path unless user_signed_in?
   end
 
-  def new
-    respond_to :js
-  end
-
   def create
     @tweet = Tweet.new(tweet_params)
 
