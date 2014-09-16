@@ -13,11 +13,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       @tweet.find_mentions
       @tweet = Tweet.new
-
-      respond_to do |format|
-        format.html { redirect_to user_root_path }
-        format.js
-      end
+      respond_to :js
     else
         render('index')
     end

@@ -1,8 +1,7 @@
 <div class="col-md-3 dashboard-left">
-  <p class="lead"><%= image_tag current_user.avatar, class: 'avatar-image' %>@<%= current_user.handle %></p>
 
-  <div id="dashboard-user-stats">
-    <%= render('layouts/dashboard/userstats', object: current_user) %>
+  <div class="dashboard-user-stats">
+    <%= render('layouts/dashboard/userstats', user: current_user) %>
   </div>
 
   <div id="dashboard-tweetbox">

@@ -1,1 +1,31 @@
-<h1> HELLO WORLD! </h1>
+<div class="col-md-3 dashboard-left">
+  <div class="dashboard-user-stats">
+    <%= render('layouts/dashboard/userstats', user: @user) %>
+  </div>
+</div>
+
+<div class="col-md-4 dashboard-center">
+  <% if @user.any_tweets? %>
+    <h3>@<%= @user.handle %>'s Tweets</h3>
+    <% @user.tweets.all.each do |tweet| %>
+      <% if current_user.mentions.find_by(user_id: current_user.id, tweet_id: tweet.id) %>
+        <div class="timeline-mention">
+          <%= render( 'layouts/dashboard/tweet',
+                      user: User.find(tweet.user_id), tweet: tweet ) %>
+        </div>
+      <% else %>
+        <div class="timeline-tweet">
+          <%= render( 'layouts/dashboard/tweet',
+                      user: User.find(tweet.user_id), tweet: tweet) %>
+        </div>
+      <% end %> <!-- if mentions -->
+    <% end %> <!-- tweets.all loop -->
+  <% else %>
+    <h3>This User Has No Tweets!</h3>
+  <% end %> <!-- any tweets? -->
+</div>
+
+<div class="col-md-3 dashboard-right">
+  <h3>@<%= @user.handle %>'s bio:</h3>
+  <p><%= @user.bio %></p>
+</div>

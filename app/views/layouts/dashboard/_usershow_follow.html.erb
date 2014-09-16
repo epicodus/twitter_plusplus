@@ -1,0 +1,10 @@
+<% unless user == current_user %>
+  <% if current_user.following?(user) %>
+    <%= link_to "unfollow @#{user.handle}?", "/unfollow/#{user.id}",
+              remote: true,
+              class: "btn btn-danger usershow-follow-btn" %>
+  <% else %>
+    <%= link_to "follow @#{user.handle}?", "/follow/#{user.id}",
+              remote: true, class: "btn btn-primary usershow-follow-btn"  %>
+  <% end %> <!-- if following -->
+<% end %> <!-- unless block -->

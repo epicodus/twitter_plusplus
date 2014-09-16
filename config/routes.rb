@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  #resources :users, only: [:index, :show]
   resource :tweets
 
   root to: 'application#index'
@@ -9,4 +8,5 @@ Rails.application.routes.draw do
   get '/follow/:id', to: 'users#follow', as: :follow_user
   get '/unfollow/:id', to: 'users#unfollow', as: :unfollow_user
   get '/search', to:'tweets#search'
+  get '/user/:id', to: 'users#show', as: :user_show
 end
