@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
   get 'timeline', to: 'tweets#index', as: :user_root
-  get 'follow/:id', to: 'relations#follow', as: :follow_user
+  get '/follow/:id', to: 'users#follow', as: :follow_user
 end

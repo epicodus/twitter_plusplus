@@ -1,3 +1,11 @@
 <div class="dashboard-following-list">
   <p class="lead">Following:</p>
+  <ul>
+    <% current_user.followed_users.each do |followed| %>
+      <li>
+        <%= image_tag followed.avatar(:thumb) %>
+        @<%= followed.handle %>
+      </li>
+    <% end %>
+  </ul>
 </div>

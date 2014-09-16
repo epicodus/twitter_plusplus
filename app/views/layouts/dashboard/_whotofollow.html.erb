@@ -8,7 +8,8 @@
         <% else %>
           <li>
             <%= image_tag user.avatar(:thumb), class: 'avatar-image' %>
-            <%= link_to "@#{user.handle}", "/follow/#{user.id}", remote: true %>
+            <%= "@#{user.handle}" %>
+            <%= link_to "[FOLLOW]", "/follow/#{user.id}", remote: true %>
           </li>
         <% end %>
       <% end %>
