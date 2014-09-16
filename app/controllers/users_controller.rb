@@ -18,4 +18,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    @search_term = params[:search_term]
+    @users = User.basic_search(@search_term)
+  end
+  
 end

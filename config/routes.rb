@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/timeline', to: 'tweets#index', as: :user_root
   get '/follow/:id', to: 'users#follow', as: :follow_user
   get '/unfollow/:id', to: 'users#unfollow', as: :unfollow_user
-  get '/search', to:'tweets#search'
+  get '/tweets/search', to:'tweets#search', as: :tweets_search
+  get '/users/search', to:'users#search', as: :users_search
   get '/user/:id', to: 'users#show', as: :user_show
 end

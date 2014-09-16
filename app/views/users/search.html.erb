@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 ui-box">
+    <h3>User Search Results</h3>
+    <p class="text-muted">query: <%= @search_term %></p>
+
+    <% @users.each do |user| %>
+      <div class="timeline-tweet">
+        <%= render('layouts/dashboard/user_search_result', user: user) %>
+      </div>
+    <% end %>
+
+    <%= link_to "Back to Timeline", user_root_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="col-md-3"></div>
+  <div class="clearfix visible-md-block"></div>
+</div>
