@@ -38,6 +38,15 @@ class User < ActiveRecord::Base
     relations.find_by(followed_id: another_user.id).destroy
   end
 
+  def all_tweets
+    ((followed_users.map { |user| user.tweets.all}).flatten + tweets)
+  end
+
+  def all_tweets_timeline
+    all_tweets.sort { |a, b| a.created_at > b.created_at ? -1 : 1 }
+  end
+
 
 private
+
 end

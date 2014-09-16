@@ -58,5 +58,37 @@ describe User do
     end
   end
 
+  describe "all_tweets" do
+    it "returns all tweets by a user and those they follow" do
+      @follower = FactoryGirl.create(:user)
+      @followed = FactoryGirl.create(:user)
+      @follower.follow!(@followed)
 
+      3.times { @followed.tweets << FactoryGirl.create(:tweet) }
+      3.times { @follower.tweets << FactoryGirl.create(:tweet) }
+
+      expect(@follower.all_tweets.length).to eq 6
+    end
+  end
+
+  describe "all_tweets_timeline" do
+    it "returns all tweets by a user and those they follow, sorted by date/time" do
+      @person = FactoryGirl.create(:user)
+      @other_person = FactoryGirl.create(:user)
+      @person.follow!(@other_person)
+
+      ordered_tweets = []
+      4.times do
+        ordered_tweets << FactoryGirl.create(:tweet)
+        sleep 1
+      end
+
+      @person.tweets << ordered_tweets[0]
+      @person.tweets << ordered_tweets[2]
+      @other_person.tweets << ordered_tweets[1]
+      @other_person.tweets << ordered_tweets[3]
+
+      expect(@person.all_tweets_timeline).to eq ordered_tweets.reverse
+    end
+  end
 end
