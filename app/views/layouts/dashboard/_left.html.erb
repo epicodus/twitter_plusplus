@@ -1,7 +1,5 @@
-<% redirect_to new_user_registration_path unless user_signed_in? %>
 <div class="col-md-3 dashboard-left">
   <p class="lead"><%= image_tag current_user.avatar, class: 'avatar-image' %>@<%= current_user.handle %></p>
   <%= render('layouts/dashboard/userstats', object: current_user) %>
   <%= render('layouts/dashboard/tweetbox') %>
-
 </div>

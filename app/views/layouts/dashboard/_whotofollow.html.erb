@@ -1,0 +1,18 @@
+<div class="dashboard-all-users">
+  <p class="lead">All Users:</p>
+  <ul>
+    <% User.all.each do |user| %>
+      <% unless user == current_user || current_user.following?(user) %>
+        <% if current_user.followed_users.include?(user) %>
+          <li>@<%= user.handle %></li>
+        <% else %>
+          <li>
+            <%= image_tag user.avatar(:thumb), class: 'avatar-image' %>
+            <%= link_to "@#{user.handle}", "/follow/#{user.id}", remote: true %>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+</div>
