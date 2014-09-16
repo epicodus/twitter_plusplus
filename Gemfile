@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem "paperclip", "~> 4.2"
-gem "textacular"
+gem 'textacular', '~> 3.0'
 
 group :test, :development do
   gem 'better_errors'

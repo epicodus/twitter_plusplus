@@ -21,7 +21,11 @@ class TweetsController < ApplicationController
     else
         render('index')
     end
+  end
 
+  def search
+    @search_term = params[:search_term]
+    @tweets = Tweet.basic_search(@search_term)
   end
 
 

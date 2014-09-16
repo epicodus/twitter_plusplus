@@ -1,0 +1,23 @@
+<div class="col-md-3"></div>
+<div class="col-md-6 ui-box">
+  <h1>Search Results</h1>
+  <p class="text-muted">query: <%= @search_term %></p>
+
+  <% @tweets.each do |tweet| %>
+    <% if current_user.mentions.find_by(user_id: current_user.id,
+                                        tweet_id: tweet.id) %>
+      <div class="timeline-mention">
+        <%= render( 'layouts/dashboard/tweet',
+                    user: User.find(tweet.user_id), tweet: tweet) %>
+      </div>
+    <% else %>
+      <div class="timeline-tweet">
+        <%= render('layouts/dashboard/tweet', user: User.find(tweet.user_id), tweet: tweet) %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= link_to "Back to Timeline", user_root_path, class: "btn btn-primary" %>
+</div>
+
+<div class="col-md-3"></div>
