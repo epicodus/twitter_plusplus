@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def all_tweets
-    ((followed_users.map { |user| user.tweets.all}).flatten + tweets)
+    ( (followed_users.map { |user| user.tweets.all } ).flatten + tweets)
   end
 
   def all_tweets_timeline
