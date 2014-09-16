@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   end
 
   def any_tweets?
-    all_tweets.length > 0
+    all_tweets.any?
   end
 
 private
