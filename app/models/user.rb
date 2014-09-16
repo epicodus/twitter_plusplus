@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
             class_name: 'Relation', dependent: :destroy
   has_many :followers, through: :reverse_relations
   has_many :tweets
+  has_many :mentions
 
   def follow!(another_user)
     relations.create!(followed_id: another_user.id)
