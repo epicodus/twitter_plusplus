@@ -1,10 +1,19 @@
 <div class="container-fluid dashboard-div">
   <div class="row dashboard">
-    <%= render('layouts/dashboard/left') %>
-    <div id="dashboard-timeline">
+
+    <div id="dashboard-left-col">
+      <%= render('layouts/dashboard/left') %>
+    </div>
+
+    <div id="dashboard-center-col">
       <%= render('layouts/dashboard/center') %>
     </div>
-    <%= render('layouts/dashboard/right') %>
+
+    <div id="dashboard-right-col">
+      <%= render('layouts/dashboard/right') %>
+    </div>
+
     <div class="clearfix visible-md-block"></div>
+
   </div> <!-- row -->
 </div> <!-- container-fluid -->
