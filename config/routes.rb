@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
 
-  get 'user_root' => 'tweets#index', as: :user_root
+  get 'timeline' => 'tweets#index', as: :user_root
 
   #todo remap user_root_path to redirect devise after login
 
