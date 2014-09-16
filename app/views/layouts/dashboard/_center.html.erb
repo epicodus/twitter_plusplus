@@ -1,5 +1,24 @@
 <div class="col-md-4 dashboard-center">
+  <% if current_user.any_tweets? %>
+    <% current_user.all_tweets_timeline.each do |tweet| %>
+      <% user = User.find(tweet.user_id) %>
 
-  <h1>CONTENT COMING SOON!</h1>
+      <div class="timeline-tweet">
+        <table>
+          <tr>
+            <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
+            <td><strong>@<%= user.handle %></strong> : <%= tweet.created_at.to_s %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= tweet.content %></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  <% else %>
+    <h1>No tweets yet!</h1>
+    <p class="lead">How about you get this party started?</p>
+  <% end %>
 
 </div>
