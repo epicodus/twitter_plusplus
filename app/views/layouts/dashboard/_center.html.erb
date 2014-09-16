@@ -1,24 +1,18 @@
 <div class="col-md-4 dashboard-center">
   <% if current_user.any_tweets? %>
     <% current_user.all_tweets_timeline.each do |tweet| %>
-      <% user = User.find(tweet.user_id) %>
-
-      <div class="timeline-tweet">
-        <table>
-          <tr>
-            <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
-            <td><strong>@<%= user.handle %></strong> : <%= tweet.created_at.to_s %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= tweet.content %></td>
-          </tr>
-        </table>
-      </div>
+      <% if current_user.mentions.find_by(user_id: current_user.id, tweet_id: tweet.id) %>
+        <div class="timeline-mention">
+          <%= render('layouts/dashboard/tweet', user: User.find(tweet.user_id), tweet: tweet) %>
+        </div>
+      <% else %>
+        <div class="timeline-tweet">
+          <%= render('layouts/dashboard/tweet', user: User.find(tweet.user_id), tweet: tweet) %>
+        </div>
+      <% end %>
     <% end %>
   <% else %>
     <h1>No tweets yet!</h1>
     <p class="lead">How about you get this party started?</p>
   <% end %>
-
 </div>

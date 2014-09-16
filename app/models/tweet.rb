@@ -1,7 +1,8 @@
 class Tweet < ActiveRecord::Base
   validates_presence_of :content
   validates :content, length: {minimum: 1, maximum: 141 }
-
+  has_many :mentions
+  
   def find_mentions
     scan_for_mentions.each { |user| user.mentions << Mention.new(tweet_id: id) }
   end

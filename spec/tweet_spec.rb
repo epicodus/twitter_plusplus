@@ -30,6 +30,7 @@ describe Tweet do
 
       user.tweets << Tweet.new(content: "hi @#{user2.handle}, don't write these mentions @#{user2.handle} @#{user2.handle} @#{user2.handle} ")
       user.tweets[-1].find_mentions
+      binding.pry
       expect(user2.mentions.length).to eq 1
     end
   end

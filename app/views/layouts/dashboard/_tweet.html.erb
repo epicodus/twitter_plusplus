@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
+    <td><strong>@<%= user.handle %></strong> : <%= tweet.created_at.to_s %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= tweet.content %></td>
+  </tr>
+</table>
