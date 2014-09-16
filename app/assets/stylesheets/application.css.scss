@@ -31,11 +31,6 @@ body {
 
 
 
-.dashboard-box {
-  background-color: #e8e8e8;
-  padding: 20px 10px 20px 10px;
-}
-
 
 .dashboard-center {
   background-color: #f0f0f0;
@@ -51,7 +46,7 @@ body {
   overflow: hidden;
 }
 
-dashboard-box {
+.ui-box {
   background-color: #f0f0f0;
   padding: 20px 10px 20px 10px;
   border-radius: 10px;
@@ -84,4 +79,9 @@ dashboard-box {
   border-bottom: 2px, solid, black;
   display: block;
   margin: 5px;
+}
+
+.flash-msg {
+  color: red;
+  font-size: 1.5em;
 }
