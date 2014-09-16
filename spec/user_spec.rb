@@ -58,6 +58,18 @@ describe User do
     end
   end
 
+  describe "any_tweets?" do
+    it "returns false if the user has no tweets to view" do
+      expect(FactoryGirl.create(:user).any_tweets?).to eq false
+    end
+
+    it "returns true if the user or anyone they follow has ever tweeted" do
+      user = FactoryGirl.create(:user)
+      user.tweets << FactoryGirl.create(:tweet)
+      expect(user.any_tweets?).to eq true
+    end
+  end
+  
   describe "all_tweets" do
     it "returns all tweets by a user and those they follow" do
       @follower = FactoryGirl.create(:user)

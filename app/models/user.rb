@@ -46,6 +46,9 @@ class User < ActiveRecord::Base
     all_tweets.sort { |a, b| a.created_at > b.created_at ? -1 : 1 }
   end
 
+  def any_tweets?
+    all_tweets.length > 0
+  end
 
 private
 
