@@ -12,7 +12,7 @@ private
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :handle
-    devise_parameter_sanitizer.for(:sign_up) << :bio
+    devise_parameter_sanitizer.for(:account_update) << :bio
   end
 
 end
