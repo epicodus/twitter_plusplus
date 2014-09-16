@@ -4,7 +4,9 @@
     <% current_user.followed_users.each do |followed| %>
       <li>
         <%= image_tag followed.avatar(:thumb) %>
-        @<%= followed.handle %>
+        <%= link_to "unfollow @#{followed.handle}",
+                    "/unfollow/#{followed.id}",
+                      remote: true, class: "btn btn-danger btn-xs" %>
       </li>
     <% end %>
   </ul>
