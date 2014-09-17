@@ -1,4 +1,5 @@
 $("#dashboard-user-stats").html("<%= j render('layouts/user/userstats', user: current_user) %>");
+$("#no-tweets-yet").remove();
 $("#dashboard-timeline").prepend("<%= j render('layouts/dashboard/tweet', user: current_user, tweet: @tweet) %>");
 $('#tweet_content').val('');
 $("#tweet_content").focus();

@@ -3,6 +3,8 @@
     <%= render('layouts/dashboard/tweet', tweet: tweet) %>
   <% end %>
 <% else %>
-  <h3>No tweets yet! :(</h3>
-  <p class="text-muted">Pssst: You can fix that by tweeting!</p>
+  <div id="no-tweets-yet">
+    <h3>No tweets yet! :(</h3>
+    <p class="text-muted">Pssst: You can fix that by tweeting!</p>
+  </div>
 <% end %>
