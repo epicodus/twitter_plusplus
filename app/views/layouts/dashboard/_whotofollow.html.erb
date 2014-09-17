@@ -8,7 +8,7 @@
         <% else %>
           <li>
             <%= image_tag user.avatar(:thumb), class: 'avatar-image' %>
-            <%= link_to "follow @#{user.handle}", "/follow/#{user.id}",
+            <%= link_to "follow @#{user.handle}", timeline_follow_user_path(user),
                         remote: true, class: "btn btn-success btn-xs" %>
           </li>
         <% end %>

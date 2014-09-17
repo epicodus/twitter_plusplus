@@ -24,6 +24,20 @@ class TweetsController < ApplicationController
     @tweets = Tweet.basic_search(@search_term)
   end
 
+  def follow
+    @user = User.find(params[:id])
+    current_user.follow!(@user)
+
+    respond_to :js
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    current_user.unfollow!(@user)
+
+    respond_to :js
+  end
+  
 
 private
   def tweet_params

@@ -5,7 +5,7 @@
       <li>
         <%= image_tag followed.avatar(:thumb) %>
         <%= link_to "unfollow @#{followed.handle}",
-                    "/unfollow/#{followed.id}",
+                    timeline_unfollow_user_path(followed),
                       remote: true, class: "btn btn-danger btn-xs" %>
       </li>
     <% end %>
