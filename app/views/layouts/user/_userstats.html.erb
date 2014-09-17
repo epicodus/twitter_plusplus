@@ -1,6 +1,6 @@
 <p class="lead">
   <% user = current_user if user == nil %>
-  <%= image_tag user.avatar, class: 'avatar-image' %>
+  <%= image_tag user.avatar(:thumb), class: 'avatar-image' %>
   @<%= user.handle %>
 </p>
 <table class="table">

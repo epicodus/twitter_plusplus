@@ -14,11 +14,13 @@ User interface is undergoing some reconstruction to make it more ajaxy / functio
 ![twitter++ UI](https://raw.githubusercontent.com/jaspeers/twitter_plusplus/master/public/screenshot.png)
 
 ## Install
-    clone project, cd to that folder
-    bundle install
-    rake db:create && rake db:schema:load
-    rails s
-    load this URL in your browser: localhost:3000
+    $ git clone https://github.com/jaspeers/twitter_plusplus.git
+    $ cd twitter_plusplus/
+    $ bundle install
+    $ rake db:create && rake db:schema:load
+    $ rails s
+Then open your browser and point it to:
+    localhost:3000
 
 ## usage
 Create a new account with the sign-in button.
