@@ -3,7 +3,7 @@
   <ul>
     <% current_user.followed_users.each do |followed| %>
       <li>
-        <%= image_tag followed.avatar(:thumb) %>
+        <%= image_tag followed.avatar(:thumb), class: "avatar-image" %>
         <%= link_to "unfollow @#{followed.handle}",
                     timeline_unfollow_user_path(followed),
                       remote: true, class: "btn btn-danger btn-xs" %>
