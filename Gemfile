@@ -41,3 +41,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'pry'
 end
+
+gem 'rails_12factor', group: :production
