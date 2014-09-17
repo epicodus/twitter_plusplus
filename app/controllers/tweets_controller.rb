@@ -13,7 +13,6 @@ class TweetsController < ApplicationController
 
     if @tweet.save
       @tweet.find_mentions
-      asdf
       respond_to :js
     else
         render('index')
