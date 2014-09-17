@@ -1,34 +1,27 @@
-<div class="col-md-3 dashboard-left">
-  <div class="dashboard-user-stats">
-    <%= render('layouts/dashboard/userstats', user: @user) %>
+<div class="row">
+  <div class="col-md-3 ui-box">
+    <div class="dashboard-user-stats">
+      <%= render('layouts/user/userstats', user: @user) %>
+    </div>
   </div>
-</div>
 
-<div class="col-md-4 dashboard-center">
-  <% if @user.any_tweets? %>
-    <h3>@<%= @user.handle %>'s Tweets</h3>
-    <% @user.tweets.all.each do |tweet| %>
-      <% if current_user.mentions.find_by(user_id: current_user.id, tweet_id: tweet.id) %>
-        <div class="timeline-mention">
-          <%= render( 'layouts/dashboard/tweet',
-                      user: User.find(tweet.user_id), tweet: tweet ) %>
-        </div>
-      <% else %>
-        <div class="timeline-tweet">
-          <%= render( 'layouts/dashboard/tweet',
-                      user: User.find(tweet.user_id), tweet: tweet) %>
-        </div>
-      <% end %> <!-- if mentions -->
-    <% end %> <!-- tweets.all loop -->
-  <% else %>
-    <h3>This User Has No Tweets!</h3>
-  <% end %> <!-- any tweets? -->
-</div>
-
-<div class="col-md-3 dashboard-right">
-  <h3>@<%= @user.handle %>'s bio:</h3>
-  <p><%= @user.bio %></p>
-  <div id="user-show-follow-button">
-    <%= render('layouts/user/follow_button', user: @user) %>
+  <div class="col-md-4 ui-box">
+    <% if !@user.any_tweets? %>
+      <h3>@<%= @user.handle %> has no tweets yet</h3>
+    <% else %>
+      <% @user.tweets.each do |tweet| %>
+        <%= render('layouts/dashboard/tweet', tweet: tweet) %>
+      <% end %>
+    <% end %>
   </div>
+
+  <div class="col-md-3 ui-box">
+    <h3>@<%= @user.handle %>'s bio:</h3>
+    <p><%= @user.bio %></p>
+    <div id="follow-unfollow-button">
+      <%= render('layouts/user/follow_button', user: @user) %>
+    </div>
+  </div>
+
+  <div class="clearfix visible-md-block"></div>
 </div>

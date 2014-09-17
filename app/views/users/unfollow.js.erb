@@ -1,4 +1,2 @@
-$("#dashboard-right-col").html("<%= j render('layouts/dashboard/right') %> ");
-$("#dashboard-user-stats").html("<%= j render('layouts/dashboard/userstats', user: current_user) %>");
-$("#dashboard-center-col").html("<%= j render('layouts/dashboard/center') %>");
-$("#user-show-follow-button").html("<%= render('layouts/user/follow_button', user: @user) %>");
+$("#follow-unfollow-button").html("<%= j render('layouts/user/follow_button', user: @user) %>");
+$("#dashboard-user-stats").html("<%= j render('layouts/user/userstats', user: @user)  %>");
