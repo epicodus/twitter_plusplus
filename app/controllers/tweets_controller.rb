@@ -31,7 +31,10 @@ class TweetsController < ApplicationController
     @user = User.find(params[:id])
     current_user.follow!(@user)
 
-    respond_to :js
+    respond_to do |format|
+      format.js
+      format.html { redirect_to user_root_path }
+    end
   end
 
   def unfollow
