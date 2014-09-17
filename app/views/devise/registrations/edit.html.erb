@@ -5,7 +5,7 @@
     <%= devise_error_messages! %>
 
     <div class="form-group"><%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %></div>
+    <%= f.email_field :email %></div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -17,13 +17,14 @@
     <div class="form-group"><%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-    <div class="form-group"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %></div>
+    <div class="form-group"><%= f.label :current_password %> <i><mark>(we need your current password to confirm your changes)</mark></i><br />
+      <%= f.password_field :current_password, autocomplete: "off", autofocus: true %></div>
     <div class="form-group">
       <%= f.label :handle %><span class="text-muted"> (4-12 chars)</span><br />
       <%= f.text_field :handle, :value => current_user.handle %>
     </div>
     <div class="form-group">
+      <%= f.label :avatar %>
       <%= f.file_field :avatar %>
     </div>
 
