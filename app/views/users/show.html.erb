@@ -16,6 +16,7 @@
   </div>
 
   <div class="col-md-3 ui-box">
+    <%= image_tag @user.avatar(:medium), class: "avatar-image" %>
     <h3>@<%= @user.handle %>'s bio:</h3>
     <p><%= @user.bio %></p>
     <div id="follow-unfollow-button">

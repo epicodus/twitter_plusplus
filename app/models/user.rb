@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates_with AttachmentSizeValidator, :attributes => :avatar, :less_than => 1.megabytes
 
   has_attached_file :avatar,
-                    :styles => { :thumb => "64x64#", :medium => "300x300>",
+                    :styles => { :thumb => "64x64", :medium => "300x300>",
                                   :large => "600x600>" },
                     :default_url => 'unknown.png'
 
