@@ -1,12 +1,6 @@
-<% if current_user.mentioned?(tweet) %>
-  <% divclass = "timeline-mention" %>
-<% else %>
-  <% divclass = "timeline-tweet" %>
-<% end %>
 <% user = User.find(tweet.user_id) %>
-
-<div class="<%= divclass %>">
-  <table>
+<div class="<%= (current_user.mentioned?(tweet) ? 'timeline-mention' : 'timeline-tweet') %>">
+  <table class="tweet-table">
     <tr>
       <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
       <td>
@@ -17,7 +11,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><%= tweet.content %></td>
+      <td class="tweet-table-content"><%= tweet.content %></td>
     </tr>
   </table>
 </div>

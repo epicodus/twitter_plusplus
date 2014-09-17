@@ -24,7 +24,7 @@ body {
 }
 
 .ui-box {
-  background-color: #e8e8e8;
+  background-color: #d8d8d8;
   padding: 10px;
   border-radius: 10px;
   overflow: hidden;
@@ -71,4 +71,14 @@ body {
 
 #dashboard-right-col li {
   list-style-type: none;
+}
+
+.tweet-table {
+  margin: 20px;
+}
+
+.tweet-table-content {
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px
 }
