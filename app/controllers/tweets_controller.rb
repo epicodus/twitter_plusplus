@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   def index
       @tweet = Tweet.new
       @user = current_user
+
       redirect_to new_user_session_path unless user_signed_in?
   end
 

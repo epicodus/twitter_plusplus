@@ -1,3 +1,4 @@
+<p id="tweet-chars-left">Characters Left: <span class="tweet-chars-left-black">141</span></p>
 <%= form_for @tweet, remote: true do |f| %>
   <%= f.text_area :content, cols: 30, rows: 5, autofocus: true %>
   <%= f.submit "Tweet++", class: "btn btn-primary" %>

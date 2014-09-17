@@ -15,3 +15,16 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function () {
+  $('#tweet_content').bind('input propertychange', function() {
+    chars_left = 141 - this.value.length;
+    if (chars_left >= 0) {
+      span_class = "tweet-chars-left-black";
+    } else {
+      span_class = "tweet-chars-left-red";
+    }
+    html_string = "Characters Left: <span class=\"" + span_class + "\">" + chars_left + "</span>";
+    $("#tweet-chars-left").html(html_string);
+  });
+});
