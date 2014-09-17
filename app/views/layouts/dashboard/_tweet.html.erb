@@ -1,14 +1,23 @@
-<table>
-  <tr>
-    <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
-    <td>
-      <strong>
-        <%= link_to "@#{user.handle}", user_show_path(user) %>
-      </strong> :
-      <%= tweet.created_at.to_s %></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><%= tweet.content %></td>
-  </tr>
-</table>
+<% if current_user.mentions.find_by(user_id: current_user.id, tweet_id: tweet.id) %>
+  <% divclass = "timeline-mention" %>
+<% else %>
+  <% divclass = "timeline-tweet" %>
+<% end %>
+<% user = User.find(tweet.user_id) %>
+
+<div class="<%= divclass %>">
+  <table>
+    <tr>
+      <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
+      <td>
+        <strong>
+          <%= link_to "@#{user.handle}", user_show_path(user) %>
+        </strong> :
+        <%= tweet.created_at.to_s %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= tweet.content %></td>
+    </tr>
+  </table>
+</div>

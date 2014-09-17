@@ -1,0 +1,8 @@
+<% if current_user.any_tweets? %>
+  <% current_user.all_tweets_timeline.each do |tweet| %>
+    <%= render('layouts/dashboard/tweet', tweet: tweet) %>
+  <% end %>
+<% else %>
+  <h3>No tweets yet! :(</h3>
+  <p class="text-muted">Pssst: You can fix that by tweeting!</p>
+<% end %>

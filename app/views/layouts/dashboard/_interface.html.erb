@@ -1,15 +1,15 @@
 <div class="container-fluid dashboard-div">
-  <div class="row dashboard">
+  <div class="row">
 
-    <div id="dashboard-left-col">
-      <%= render('layouts/dashboard/left') %>
+    <div id="dashboard-left-col" class="col-md-3 ui-box">
+      <%= render('layouts/dashboard/user_actions') %>
     </div>
 
-    <div id="dashboard-center-col">
-      <%= render('layouts/dashboard/center') %>
+    <div id="dashboard-timeline" class="col-md-4 ui-box">
+      <%= render('layouts/dashboard/timeline') %>
     </div>
 
-    <div id="dashboard-right-col">
+    <div id="dashboard-right-col" class="col-md-3 ui-box">
       <%= render('layouts/dashboard/right') %>
     </div>
 

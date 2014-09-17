@@ -1,4 +1,5 @@
 <p class="lead">
+  <% user = current_user if user == nil %>
   <%= image_tag user.avatar, class: 'avatar-image' %>
   @<%= user.handle %>
 </p>
@@ -9,8 +10,8 @@
     <th>Followers</th>
   </thead>
   <tr>
-    <td><%= user.tweets.length %></td>
-    <td><%= user.followed_users.length %></td>
-    <td><%= user.followers.length %></td>
+    <td><%= user.tweets.count %></td>
+    <td><%= user.followed_users.count %></td>
+    <td><%= user.followers.count %></td>
   </tr>
 </table>

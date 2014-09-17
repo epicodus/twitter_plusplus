@@ -28,4 +28,7 @@
 <div class="col-md-3 dashboard-right">
   <h3>@<%= @user.handle %>'s bio:</h3>
   <p><%= @user.bio %></p>
+  <div id="user-show-follow-button">
+    <%= render('layouts/user/follow_button', user: @user) %>
+  </div>
 </div>
