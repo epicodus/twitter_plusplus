@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, :only => [:create, :destroy]
+  before_action :authenticate_user!, :only => [:create, :destroy, :follow, :unfollow]
   before_action :build_timeline, :only => [:index, :create]
 
   def index
