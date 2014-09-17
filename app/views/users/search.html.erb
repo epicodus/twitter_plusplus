@@ -6,7 +6,13 @@
 
     <% @users.each do |user| %>
       <div class="timeline-tweet">
-        <%= render('layouts/dashboard/user_search_result', user: user) %>
+        <%= render('layouts/user/user_search_result', user: user) %>
+      </div>
+    <% end %>
+
+    <% if @users.length == 0 %>
+      <div class="timeline-mention">
+        <h3>--NO RESULTS--</h3>
       </div>
     <% end %>
 
