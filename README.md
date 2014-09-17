@@ -9,6 +9,10 @@ Submitted as an assessment for Epicodus but I will be adding features beyond tho
 
 User interface is undergoing some reconstruction to make it more ajaxy / functional.
 
+##Screenshot (9/17/2014)
+
+![twitter++ UI](https://raw.githubusercontent.com/jaspeers/twitter_plusplus/master/public/screenshot.png)
+
 ## Install
     clone project, cd to that folder
     bundle install
