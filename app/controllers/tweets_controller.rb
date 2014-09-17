@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
 
     if @tweet.save
       @tweet.find_mentions
+      asdf
       respond_to :js
     else
         render('index')
@@ -37,7 +38,7 @@ class TweetsController < ApplicationController
 
     respond_to :js
   end
-  
+
 
 private
   def tweet_params

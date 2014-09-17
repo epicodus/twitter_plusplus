@@ -69,7 +69,7 @@ describe User do
       expect(user.any_tweets?).to eq true
     end
   end
-  
+
   describe "all_tweets" do
     it "returns all tweets by a user and those they follow" do
       @follower = FactoryGirl.create(:user)
@@ -101,6 +101,22 @@ describe User do
       @other_person.tweets << ordered_tweets[3]
 
       expect(@person.all_tweets_timeline).to eq ordered_tweets.reverse
+    end
+  end
+
+  describe "mentioned?" do
+    it "returns false if a tweet does not mention a user" do
+      tweet = FactoryGirl.create(:tweet)
+      user = FactoryGirl.create(:user)
+
+      expect(user.mentioned?(tweet)).to eq false
+    end
+
+    it "returns true if a tweet mentions a user" do
+      user = FactoryGirl.create(:user)
+      tweet = Tweet.create(content: "Hello, @#{user.handle}!")
+      tweet.find_mentions
+      expect(user.mentioned?(tweet)).to eq true
     end
   end
 end

@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
     all_tweets.any?
   end
 
+  def mentioned?(tweet)
+    mentions.find_by(user_id: id, tweet_id: tweet.id) == nil ? false : true
+  end
+
 private
 
 end
