@@ -9,6 +9,15 @@ Submitted as an assessment for Epicodus but I will be adding features beyond tho
 
 User interface is undergoing some reconstruction to make it more ajaxy / functional.
 
+##Heroku
+
+Now you can run the current build of Twitter++ on heroku!
+
+[Twitter++ on Heroku](http://twitter-pp.herokuapp.com/)
+
+Keep in mind that this is a work-in progress! It may not run, it may not run well, it may run *too* well. No promises!
+
+
 ##Screenshot (9/17/2014)
 
 ![twitter++ UI](https://raw.githubusercontent.com/jaspeers/twitter_plusplus/master/public/screenshot.png)
