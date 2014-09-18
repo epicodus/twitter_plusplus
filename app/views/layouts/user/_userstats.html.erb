@@ -10,7 +10,7 @@
     <th>Followers</th>
   </thead>
   <tr>
-    <td id="user-tweets-count"><%= user.tweets.count %></td>
+    <td id="user-tweets-count"><%= link_to user.tweets.count, user_show_path(user) %></td>
     <td id="user-followed-users-count"><%= user.followed_users.count %></td>
     <td id="user-followers-count"><%= user.followers.count %></td>
   </tr>
