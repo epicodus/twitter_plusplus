@@ -1,2 +1,8 @@
 $("#follow-unfollow-button").html("<%= j render('layouts/user/follow_button', user: @user) %>");
 $("#dashboard-user-stats").html("<%= j render('layouts/user/userstats', user: @user)  %>");
+
+if ($("#following-col").length) {
+  <% @user = current_user %>
+  $("#following-col").html("<%= j render('layouts/relations/following', user: @user ) %>");
+  $("#followed-users-col").html("<%= j render('layouts/relations/followed_users', user: @user ) %>");
+}

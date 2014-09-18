@@ -1,0 +1,5 @@
+<h3>@<%= user.handle %> is following:</h3>
+
+<% user.followed_users.each do |friend| %>
+  <%= render('layouts/relations/usershow', user: friend) %>
+<% end %>
