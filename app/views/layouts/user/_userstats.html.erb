@@ -1,7 +1,7 @@
 <p class="lead">
   <% user = current_user if user == nil %>
   <%= image_tag user.avatar(:thumb), class: 'avatar-image' %>
-  @<%= user.handle %>
+  <%= link_to "@#{user.handle}", user_show_path(user) %>
 </p>
 <table class="table">
   <thead>
