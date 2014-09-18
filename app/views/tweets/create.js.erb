@@ -1,6 +1,6 @@
-$("#dashboard-user-stats").html("<%= j render('layouts/user/userstats', user: current_user) %>");
-$("#no-tweets-yet").remove();
+$(".dashboard-user-stats").html("<%= j render('layouts/user/userstats', user: current_user) %>");
 $("#dashboard-timeline").prepend("<%= j render('layouts/dashboard/tweet', user: current_user, tweet: @tweet) %>");
 $("#tweet-chars-left").html("Characters Left: <span class='tweet-chars-left-black'>141</span>");
 $('#tweet_content').val('');
 $("#tweet_content").focus();
+$("#no-tweets-yet").remove();

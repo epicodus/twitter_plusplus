@@ -12,5 +12,16 @@
         <td></td>
         <td class="usershow-bio"><%= user.bio %></td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+        <% if current_user.following?(user) %>
+          <!-- render unfollow button -->
+          <%= link_to "unfollow", user_unfollow_path(user), class: "btn btn-danger btn-xs", remote: true %>
+        <% else %>
+          <%= link_to "follow", user_follow_path(user), class: "btn btn-success btn-xs", remote: true %>
+        <% end %>
+        </td>
+      </tr>
   </table>
 </div>
