@@ -1,0 +1,16 @@
+<div class="timeline-tweet">
+  <table class="usershow-table">
+    <tr>
+      <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
+      <td>
+        <strong>
+          <%= link_to "@#{user.handle}", user_path(user) %>
+        </strong>
+        Member since: <%= user.created_at.to_s %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="usershow-bio"><%= user.bio %></td>
+      </tr>
+  </table>
+</div>

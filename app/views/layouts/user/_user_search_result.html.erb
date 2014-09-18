@@ -3,7 +3,7 @@
     <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
     <td>
       <strong>
-        <%= link_to "@#{user.handle}", user_show_path(user) %>
+        <%= link_to "@#{user.handle}", user_path(user) %>
       </strong> :
       <span class="text-muted">Joined: <%= user.created_at.to_s %></span>
     </td>

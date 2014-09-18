@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     @search_term = params[:search_term]
     @users = User.basic_search(@search_term)
   end
-  
+
+  def list_followers
+    @user = User.find(params[:id])
+  end
 
 end

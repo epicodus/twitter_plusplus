@@ -9,7 +9,7 @@
       <td><%= image_tag user.avatar(:thumb), class: "avatar-image" %></td>
       <td>
         <strong>
-          <%= link_to "@#{user.handle}", user_show_path(user) %>
+          <%= link_to "@#{user.handle}", user_path(user) %>
         </strong> :
         <%= tweet.created_at.to_s %></td>
     </tr>
