@@ -19,7 +19,8 @@ User interface is undergoing some reconstruction to make it more ajaxy / functio
     $ bundle install
     $ rake db:create && rake db:schema:load
     $ rails s
-Then open your browser and point it to:
+
+Open your browser and navigate to:
     localhost:3000
 
 ## usage
