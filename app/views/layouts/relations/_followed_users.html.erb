@@ -1,0 +1,4 @@
+<h3>@<%= user.handle %>'s followers:</h3>
+<% user.followers.each do |friend| %>
+  <%= render('layouts/relations/usershow', user: friend) %>
+<% end %>

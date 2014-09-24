@@ -6,19 +6,12 @@
     </div>
   </div>
 
-  <div class="col-md-3 ui-box">
-    <h3>@<%= @user.handle %> is following:</h3>
-
-    <% @following.each do |friend| %>
-      <%= render('layouts/relations/usershow', user: friend) %>
-    <% end %>
+  <div id="following-col" class="col-md-3 ui-box">
+    <%= render('layouts/relations/following', user: @user) %>
   </div>
 
-  <div class="col-md-3 ui-box">
-    <h3>@<%= @user.handle %>'s followers:</h3>
-    <% @followers.each do |friend| %>
-      <%= render('layouts/relations/usershow', user: friend) %>
-    <% end %>
+  <div id="followed-users-col" class="col-md-3 ui-box">
+    <%= render('layouts/relations/followed_users', user: @user) %>
   </div>
 
   <div class="clearfix visible-md-block"></div>
